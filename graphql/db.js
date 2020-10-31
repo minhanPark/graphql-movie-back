@@ -22,3 +22,13 @@ export const getMovie = (id) => {
     })
     .then((res) => res.data.data.movie);
 };
+
+export const getSuggestions = (id) => {
+  return axios
+    .get("https://yts.mx/api/v2/movie_suggestions.json", {
+      params: {
+        movie_id: id,
+      },
+    })
+    .then((res) => res.data.data.movies);
+};
